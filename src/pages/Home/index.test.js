@@ -1,5 +1,43 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, 
+  // within 
+} from "@testing-library/react";
 import Home from "./index";
+// import { api, DataProvider } from "../../contexts/DataContext";
+
+// const data = {
+//   events: [
+//     {
+//       id: 1,
+//       type: "soirée entreprise",
+//       date: "2022-10-29T20:28:45.744Z",
+//       title: "Conférence #productCON",
+//       cover: "/images/stem-list-EVgsAbL51Rk-unsplash.png",
+//       description:
+//         "Présentation des outils analytics aux professionnels du secteur",
+//       nb_guesses: 1300,
+//       periode: "24-25-26 Février",
+//       prestations: [
+//         "1 espace d’exposition",
+//         "1 scéne principale",
+//         "2 espaces de restaurations",
+//         "1 site web dédié",
+//       ],
+//     },
+
+//     {
+//       id: 2,
+//       type: "forum",
+//       date: "2022-04-29T20:28:45.744Z",
+//       title: "Forum #productCON",
+//       cover: "/images/stem-list-EVgsAbL51Rk-unsplash.png",
+//       description:
+//         "Présentation des outils analytics aux professionnels du secteur",
+//       nb_guesses: 1300,
+//       periode: "24-25-26 Février",
+//       prestations: ["1 espace d’exposition", "1 scéne principale"],
+//     },
+//   ],
+// };
 
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {
@@ -45,9 +83,19 @@ describe("When a page is created", () => {
   })
   it("a footer is displayed", () => {
     const { queryByTestId } = render(<Home />);
-    expect(queryByTestId(/footer/i)).toBeTruthy();
+    expect(queryByTestId("footer")).toBeTruthy();
   })
-  it("an event card, with the last event, is displayed", () => {
+  it("an event card, with the last event, is displayed", async () => {
     // to implement
+
+  //   api.loadData = jest.fn().mockReturnValue(data);
+  //   render(
+  //     <DataProvider>
+  //       <Home />
+  //     </DataProvider>
+  //   );
+
+  //   const { getByText } = within(screen.getByTestId("footer"))
+  //   expect(getByText("octobre")).toBeInTheDocument()
   })
-});
+})
